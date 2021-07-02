@@ -1,0 +1,9 @@
+<app-header></app-header>
+<app-content>
+  <app-list-container [items]="items"></app-list-container>
+</app-content>
+<app-footer
+  (makeAllBackend)="makeAllBackend()"
+  (addItem)="addItem()"
+  (removeItem)="removeItem()"
+></app-footer>
