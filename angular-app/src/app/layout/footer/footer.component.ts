@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
+import { DatasetSize } from '../../enums/dataset-size.enum';
 
 @Component({
   selector: 'app-footer',
@@ -15,7 +16,14 @@ export class FooterComponent implements OnInit, OnChanges {
   @Output()
   removeItem: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  @Output()
+  numberOfItemsChanged: EventEmitter<any> = new EventEmitter<any>();
+
+  DatasetSizes = DatasetSize;
+
+  handleNumberOfItemsChange(event: any) {
+    this.numberOfItemsChanged.emit(event.target.value)
+  }
 
   ngOnInit(): void {
     console.log('footer init');
@@ -24,5 +32,4 @@ export class FooterComponent implements OnInit, OnChanges {
   ngOnChanges() {
     console.log('footer changes');
   }
-
 }

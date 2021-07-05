@@ -1,4 +1,13 @@
-<p>footer works!</p>
-<button (click)="makeAllBackend.emit()">Make all backend</button>
-<button (click)="addItem.emit()">Add item</button>
-<button (click)="removeItem.emit()">Remove item</button>
+<div class="app-footer">
+  <button (click)="makeAllBackend.emit()">Make all backend</button>
+  <button (click)="addItem.emit()">Add item</button>
+  <button (click)="removeItem.emit()">Remove item</button>
+
+  <select (change)="handleNumberOfItemsChange($event)">
+    <option>{{ DatasetSizes.TenItems }}</option>
+    <option>{{ DatasetSizes.OneHundredItems }}</option>
+    <option>{{ DatasetSizes.OneThousandItems }}</option>
+    <option>{{ DatasetSizes.TenThousandsItems }}</option>
+    <option>{{ DatasetSizes.TwentyThousandsItems }}</option>
+  </select>
+</div>

@@ -1,3 +1,4 @@
-<div [class]="item.jobTitle">
-  {{ item.name }} -- {{ item.jobTitle }}
+<div *ngIf="item" [class]="['item', item.jobTitle]">
+  <strong>{{ item.name }}</strong><br/>
+  <span>Position: {{ item.jobTitle }}</span>&nbsp;---&nbsp;<span>Age: {{ item.age }}</span>
 </div>

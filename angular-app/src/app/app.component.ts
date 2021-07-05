@@ -1,27 +1,33 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { Employee } from './interfaces/employee.interface';
+import { JobTitle } from './enums/job-title.enum';
+import { DataService } from './services/data.service';
+import { DatasetSize } from './enums/dataset-size.enum';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnChanges {
-  items = [
-    { name: 'Dawid', jobTitle: 'frontend-dev' },
-    { name: 'Kacper', jobTitle: 'frontend-dev' },
-    { name: 'Magda', jobTitle: 'hr-expert' },
-  ];
+  items: Employee[] = this.dataService.getDataset(DatasetSize.TenItems);
+
+  constructor(private dataService: DataService) {
+  }
 
   makeAllBackend() {
-    this.items = this.items.map(item => ({ ...item, jobTitle: 'backend-dev'}));
+    this.items = this.items.map(item => ({ ...item, jobTitle: JobTitle.BackendDev}));
   }
 
   addItem() {
-    this.items.push({ name: 'Krzysio', jobTitle: 'backend-dev' });
+    this.items.push(this.items[0]);
   }
 
   removeItem() {
     this.items.splice(-1, 1);
+  }
+
+  changeNumberOfItems(datasetSize: DatasetSize) {
+    this.items = this.dataService.getDataset(datasetSize);
   }
 
   ngOnInit() {

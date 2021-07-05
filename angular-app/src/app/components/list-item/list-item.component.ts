@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Employee } from '../../interfaces/employee.interface';
 
 @Component({
   selector: 'app-list-item',
@@ -7,9 +8,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 })
 export class ListItemComponent implements OnInit, OnChanges {
   @Input()
-  item: any;
-
-  constructor() { }
+  item: Employee | null = null;
 
   ngOnInit(): void {
     console.log('list item init');
@@ -18,5 +17,4 @@ export class ListItemComponent implements OnInit, OnChanges {
   ngOnChanges() {
     console.log('list item changes');
   }
-
 }
