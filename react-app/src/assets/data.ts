@@ -1,6 +1,7 @@
 import { DatasetSize } from '../enums/dataset-size.enum';
 import { JobTitle } from '../enums/job-title.enum';
 import { Employee } from '../interfaces/employee.interface';
+import { v4 as uuid} from 'uuid';
 
 const data: Employee[] = [
   {name: 'Hasad Harmon', jobTitle: JobTitle.HrExpert, age: 71},
@@ -105,9 +106,9 @@ const data: Employee[] = [
   {name: 'Jackson Ratliff', jobTitle: JobTitle.BackendDev, age: 63},
 ];
 
-export const tenItems: Employee[] = data.slice(0, 10);
+export const tenItems: Employee[] = data.slice(0, 10).map(el => ({...el, key: uuid()}));;
 
-export const oneHundredItems: Employee[] = data.slice();
+export const oneHundredItems: Employee[] = data.slice().map(el => ({...el, key: uuid()}));
 
 export const oneThousandItems: Employee[] = [
   ...data,
@@ -120,7 +121,7 @@ export const oneThousandItems: Employee[] = [
   ...data,
   ...data,
   ...data,
-];
+].map(el => ({...el, key: uuid()}));;
 
 export const tenThousandsItems: Employee[] = [
   ...oneThousandItems,
@@ -133,12 +134,12 @@ export const tenThousandsItems: Employee[] = [
   ...oneThousandItems,
   ...oneThousandItems,
   ...oneThousandItems,
-];
+].map(el => ({...el, key: uuid()}));;
 
 export const twentyThousandsItems: Employee[] = [
   ...tenThousandsItems,
   ...tenThousandsItems,
-];
+].map(el => ({...el, key: uuid()}));;
 
 export const dataMap  = {
   [DatasetSize.TenItems]: tenItems,

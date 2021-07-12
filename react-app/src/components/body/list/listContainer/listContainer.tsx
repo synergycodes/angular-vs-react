@@ -8,9 +8,9 @@ interface Props  {
 export const ListContainer:React.FC<Props> = ({data}) => {
    
    return (<div className="app-list-container">
-     {data.map(el => {
-      return (<ListItem  employee={el}></ListItem>)
-     })}
+     {data.map(el => (
+     <React.Fragment key={el.key}><ListItem  employee={el}></ListItem></React.Fragment>)
+     )}
 </div>)
 
 }

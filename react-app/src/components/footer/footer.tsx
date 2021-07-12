@@ -4,7 +4,7 @@ import {DatasetSize} from  '../../enums/dataset-size.enum';
 import { JobTitle } from '../../enums/job-title.enum';
 import { Employee } from '../../interfaces/employee.interface';
 import './footer.css';
-
+import {v4 as uuid} from 'uuid'
 interface Props {
   data: Employee[]
   setData: (data: Employee[]) => any,
@@ -15,12 +15,12 @@ const makeAllBackend = (data:Employee[]) => {
 }
 
 const addItem = (data:Employee[]) => {
-  return [...data, data[0]]
+  return [...data, {...data[0], key: uuid()}]
 }
 
 const removeItem = (data:Employee[]) => {
-  const [first, ...newData] = data
-  return newData
+
+  return data.slice(0, -1)
 }
 
 export const Footer:React.FC<Props> =  ({setData, data}) => {
