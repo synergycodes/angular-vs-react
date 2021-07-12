@@ -1,0 +1,20 @@
+.item {
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+  }
+  
+  .backend-dev {
+    background-color: pink;
+  }
+  
+  .frontend-dev {
+    background-color: green;
+  }
+  
+  .hr-expert {
+    background-color: yellow;
+  }
+  
