@@ -3,4 +3,8 @@
     padding: 10px;
     display: flex;
     justify-content: space-around;
+    height: 30px;
+    position:fixed;
+    width: 100%;
+    bottom: 0;
   }

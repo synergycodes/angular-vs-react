@@ -1,6 +1,7 @@
 import React from 'react'
 import { ListItem } from '../listItem/listItem'
 import {Employee} from '../../../../interfaces/employee.interface'
+import './listContainer.css'
 interface Props  {
     data: Employee[]
 }
