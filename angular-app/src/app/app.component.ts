@@ -3,6 +3,7 @@ import { Employee } from './interfaces/employee.interface';
 import { JobTitle } from './enums/job-title.enum';
 import { DataService } from './services/data.service';
 import { DatasetSize } from './enums/dataset-size.enum';
+import { v4 as uuid } from 'uuid'
 
 @Component({
   selector: 'app-root',
@@ -19,11 +20,11 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   addItem() {
-    this.items.push(this.items[0]);
+    this.items = [...this.items, { ...this.items[0], key: uuid() }];
   }
 
   removeItem() {
-    this.items.splice(-1, 1);
+    this.items = this.items.slice(0, -1);
   }
 
   changeNumberOfItems(datasetSize: DatasetSize) {
