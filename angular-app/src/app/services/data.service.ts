@@ -14,13 +14,13 @@ import {
 })
 export class DataService {
   dataCountMap: { [key: string]: Employee[] } = {
+    [DatasetSize.None]: [] as Employee[],
     [DatasetSize.TenItems]: tenItems,
     [DatasetSize.OneHundredItems]: oneHundredItems,
     [DatasetSize.OneThousandItems]: oneThousandItems,
     [DatasetSize.TenThousandsItems]: tenThousandsItems,
     [DatasetSize.TwentyThousandsItems]: twentyThousandsItems,
   };
-
 
   getDataset(size: DatasetSize) {
     return this.dataCountMap[size];

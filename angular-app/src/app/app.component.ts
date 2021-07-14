@@ -9,7 +9,7 @@ import { DatasetSize } from './enums/dataset-size.enum';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit, OnChanges {
-  items: Employee[] = this.dataService.getDataset(DatasetSize.TenItems);
+  items: Employee[] = this.dataService.getDataset(DatasetSize.None);
 
   constructor(private dataService: DataService) {
   }
