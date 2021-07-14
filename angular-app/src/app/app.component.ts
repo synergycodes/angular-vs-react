@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnChanges, OnInit } from '@angular/core';
 import { Employee } from './interfaces/employee.interface';
 import { JobTitle } from './enums/job-title.enum';
 import { DataService } from './services/data.service';
@@ -8,6 +8,7 @@ import { v4 as uuid } from 'uuid'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit, OnChanges {
   items: Employee[] = this.dataService.getDataset(DatasetSize.None);

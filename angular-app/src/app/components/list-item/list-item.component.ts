@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Employee } from '../../interfaces/employee.interface';
 
 @Component({
   selector: 'app-list-item',
   templateUrl: './list-item.component.html',
-  styleUrls: ['./list-item.component.css']
+  styleUrls: ['./list-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListItemComponent implements OnInit, OnChanges {
   @Input()
