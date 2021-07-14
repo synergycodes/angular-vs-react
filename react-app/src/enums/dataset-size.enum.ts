@@ -1,4 +1,5 @@
 export enum DatasetSize {
+  None = '0',
   TenItems = '10',
   OneHundredItems = '100',
   OneThousandItems = '1k',

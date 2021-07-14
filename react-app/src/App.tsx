@@ -1,13 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/header'
 import {Footer} from './components/footer/footer'
-import { Title } from './components/title/title';
-import {tenItems} from './assets/data'
 import { Content } from './components/body/list/content/content';
+import { Employee } from './interfaces/employee.interface';
 function App() {
-  const [data, setData] = React.useState(tenItems)
+  const [data, setData] = React.useState([] as Employee[])
   return (
    <>
     <Header/>
