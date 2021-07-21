@@ -142,6 +142,7 @@ export const twentyThousandsItems: Employee[] = [
 ].map(el => ({...el, key: uuid()}));;
 
 export const dataMap  = {
+  [DatasetSize.None]: [],
   [DatasetSize.TenItems]: tenItems,
   [DatasetSize.OneHundredItems]: oneHundredItems,
   [DatasetSize.OneThousandItems]: oneThousandItems,

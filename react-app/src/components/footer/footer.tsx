@@ -32,6 +32,7 @@ return(
   <button onClick={() => setData(addItem(data))}>Add item</button>
   <button onClick={() => setData(removeItem(data))}>Remove item</button>
   <select onChange={(e) => setData(dataMap[e.currentTarget.value as DatasetSize])}  >
+    <option>{ DatasetSize.None }</option>
     <option>{ DatasetSize.TenItems }</option>
     <option>{ DatasetSize.OneHundredItems }</option>
     <option>{ DatasetSize.OneThousandItems }</option>

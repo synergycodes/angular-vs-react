@@ -4,6 +4,7 @@
   <button (click)="removeItem.emit()">Remove item</button>
 
   <select (change)="handleNumberOfItemsChange($event)">
+    <option>{{ DatasetSizes.None }}</option>
     <option>{{ DatasetSizes.TenItems }}</option>
     <option>{{ DatasetSizes.OneHundredItems }}</option>
     <option>{{ DatasetSizes.OneThousandItems }}</option>
