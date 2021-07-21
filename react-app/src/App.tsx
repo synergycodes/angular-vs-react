@@ -6,6 +6,8 @@ import {Footer} from './components/footer/footer'
 import { Title } from './components/title/title';
 import {tenItems} from './assets/data'
 import { Content } from './components/body/list/content/content';
+import './App.css';
+
 function App() {
   const [data, setData] = React.useState(tenItems)
   return (
